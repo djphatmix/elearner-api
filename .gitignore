@@ -1,0 +1,48 @@
+# Maven build output
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# The Maven wrapper is kept (mvnw, .mvn/wrapper/*) so the project builds without Maven installed
+
+# Environment and local settings. The OpenAI key lives in the shared .env one folder up, never in this project.
+.env
+.env.*
+!.env.example
+application-local.yml
+application-local.properties
+*.local
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+hs_err_pid*
+replay_pid*
+
+# Test and coverage output
+coverage/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+.factorypath
+.apt_generated/
+.springBeans
+.sts4-cache/
+nbproject/
+!nbproject/project.xml
+*.sw?
+
+# Spring Initializr help file
+HELP.md
+
+# OS files
+.DS_Store
+Thumbs.db
