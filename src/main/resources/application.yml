@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  servlet:
+    multipart:
+      # Uploads of up to 50 MB. The request ceiling leaves room for the note text and the other form fields.
+      max-file-size: 50MB
+      max-request-size: 51MB
+
+app:
+  # Origins allowed to call the API from a browser (comma separated).
+  allowed-origins: http://localhost:5173
+  ingest:
+    # Same idea as log-analyzer: the API runs a Python script, from its own virtual environment.
+    # Paths are relative to this elearner-api/ folder. Override the interpreter with INGEST_PYTHON.
+    python: ${INGEST_PYTHON:../elearner-ai/.venv/bin/python}
+    script: ../elearner-ai/ingest_notes.py
+    timeout-seconds: 600
